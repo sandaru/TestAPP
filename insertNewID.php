@@ -9,6 +9,6 @@
 
     $uid_code = $_POST['uid'];
     echo $uid_code;
-    mysqli_query($connection->myconn,"INSERT INTO app_reg (`app_id`,`uid_code`) VALUES(null,'$uid_code')");
+    mysqli_query($connection->myconn,"INSERT INTO app_reg (`id`,`uid_code`) VALUES (null,'$uid_code')");
     $connection->closeConnection();
 ?>

@@ -7,9 +7,18 @@
     $connection->selectDatabase();// closed connection
     //End of MySql Connection
 
-
     //Authenticate the application
     $applicationID = $_POST['uid'];
-    
-
+    $result = mysqli_query($connection->myconn,"select uid_code from app_reg");
+    while($row = mysqli_fetch_array($result)) 
+    	{
+  			if(md5($row['uid_code'])==$applicationID)
+  			{
+  				echo "true";
+  			}
+  			else 
+  			{
+  				echo "false";
+  			}
+        }
 ?>

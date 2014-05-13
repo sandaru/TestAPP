@@ -1,6 +1,6 @@
-<!-- PHP-MYSQL connection class -->
 <?php
-class createConnection //create a class for make connection
+//create a class for make connection
+class createConnection 
 {
     var $host="localhost";
     var $username="root";    // specify the sever details for mysql
