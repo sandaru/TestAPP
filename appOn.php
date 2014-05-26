@@ -12,8 +12,10 @@
 	$computerName = $_POST['comName'];
 	$application_ID = $_POST['uid'];
 
-	echo $port." ".$publicIP." ".$computerName." ".$application_ID;
-
-	mysqli_query($connection ->myconn,"UPDATE app_stun_data SET ip = '$publicIP',port = $port WHERE app_id='$application_ID'");
+	echo "<t>".$port." ".$publicIP." ".$computerName." ".$application_ID."</t>";
+	//Update port and public ip
+	mysqli_query($connection ->myconn,"UPDATE app_stun_data SET machine_name='$computerName' , ip = '$publicIP',port = $port WHERE app_id='$application_ID'");
+	//Change application state to true
+	mysqli_query($connection ->myconn,"UPDATE app_state SET state= 'true' WHERE app_id = '$application_ID'");
 	$connection->closeConnection();//Close Mysql Connection
 ?>
